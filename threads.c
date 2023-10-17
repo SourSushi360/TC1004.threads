@@ -8,8 +8,11 @@ void * holaHilo(void *thid) {
 int main (){
     pthread_t t;
     saldo = 0;
-    int thid = 3;
-    pthread_create(&t,NULL,
-    holaHilo,&thid);
+    int thid[10];
+    for (int i = 0;i<10;i++){
+        thid[i]=i;
+        pthread_create(&t,NULL,
+        holaHilo,&thid[i]);
+    }
     pthread_exit(NULL);
 }
